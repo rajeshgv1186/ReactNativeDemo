@@ -24,6 +24,8 @@ export default class App extends Component {
       <View style={styles.container}>
         <FlatList
           data={data}
+          inverted={true}
+          keyExtractor={({ sha }, index) => sha}
           renderItem={({ item }) => (
             <Text style={styles.item}><Text style={styles.textbold}>Author: </Text>{item.commit.author.name} 
             {'\n'}
@@ -41,7 +43,8 @@ export default class App extends Component {
 };
 const styles = StyleSheet.create({
   container: {
-    padding:'5%',
+    paddingLeft:'5%',
+    paddingTop:'15%',
     backgroundColor: '#fff',
   },
   item: {
