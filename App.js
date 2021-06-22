@@ -25,7 +25,13 @@ export default class App extends Component {
         <FlatList
           data={data}
           renderItem={({ item }) => (
-            <Text style={styles.item}>{item.commit.author.name}</Text>
+            <Text style={styles.item}><Text style={styles.textbold}>Author: </Text>{item.commit.author.name} 
+            {'\n'}
+            <Text style={styles.textbold}>SHA: </Text>{item.sha} 
+            {'\n'}
+            <Text style={styles.textbold}>Message: </Text>{item.commit.message} 
+            </Text>
+            
           )}
         />
 
@@ -41,6 +47,8 @@ const styles = StyleSheet.create({
   item: {
     padding: 10,
     fontSize: 18,
-    height: 44,
   },
+  textbold:{
+    fontWeight:'bold'
+  }
 });
