@@ -19,7 +19,7 @@ export default class App extends Component {
       .catch((error) => console.error(error))
   }
   render() {
-    const data = [];
+    const data = this.state;
     return (
       <View style={styles.container}>
         <FlatList
