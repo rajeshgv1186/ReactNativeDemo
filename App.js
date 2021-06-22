@@ -19,13 +19,13 @@ export default class App extends Component {
       .catch((error) => console.error(error))
   }
   render() {
-    const data = this.state;
+    const data = this.state.data;
     return (
       <View style={styles.container}>
         <FlatList
           data={data}
           renderItem={({ item }) => (
-            <Text>{item.commit.author.name}</Text>
+            <Text style={styles.item}>{item.commit.author.name}</Text>
           )}
         />
 
@@ -39,5 +39,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
   },
 });
