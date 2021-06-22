@@ -11,7 +11,12 @@ export default class App extends Component {
     };
   }
   componentDidMount() {
-
+    fetch('https://api.github.com/repos/rajeshgv1186/ReactNativeDemo/commits')
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ data: json });
+      })
+      .catch((error) => console.error(error))
   }
   render() {
     const data = [];
