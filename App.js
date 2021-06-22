@@ -35,10 +35,8 @@ export default class App extends Component {
 };
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    padding:'5%',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   item: {
     padding: 10,
