@@ -1,22 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-export default function App() {
-  const data = [];
-  return (
-    <View style={styles.container}>
-     <FlatList
-            data={data}
-            renderItem={({ item }) => (
-              <Text></Text>
-            )}
-          />
+export default class App extends Component {
 
-    </View>
-  );
-}
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
 
+  }
+  render() {
+    const data = [];
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <Text>{item.commit.author.name}</Text>
+          )}
+        />
+
+      </View>
+    );
+  }
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
